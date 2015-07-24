@@ -19,13 +19,17 @@ app.post("/yawn", function(req, res) {
     return res.status(200).json({text: "http://www.catgifs.org/wp-content/uploads/2013/09/122_yawn_cat_gifs.gif"});
 })
 
-app.post('/image', function (req, res) {
+app.get('/image', function (req, res) {
 	var botPayload = {
         text: ""
     }
 
+    var type = req.query.type || "jpg"
+
+    console.log(type);
+
     request({
-        url: "http://thecatapi.com/api/images/get?format=html"
+        url: "http://thecatapi.com/api/images/get?format=html&type=" + type
     }, function(error, resp, body) {
         if (!error && resp.statusCode === 200) {
             var regex = /src\s*=\s*"(.+?)"/;
@@ -39,6 +43,8 @@ app.post('/image', function (req, res) {
         }
     })
 });
+
+
 
 app.post('/fact', function (req, res) {
     var botPayload = {
