@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 console.log("Starting...");
 
-app.get('/image', function (req, res) {
+app.post('/image', function (req, res) {
 	var botPayload = {
         text: ""
     }
