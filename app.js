@@ -10,8 +10,25 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 console.log("Starting...");
 
-app.get('/', function (req, res) {
-	//
+app.get('/image', function (req, res) {
+	var botPayload = {
+        text: ""
+    }
+
+    request({
+        url: "http://thecatapi.com/api/images/get?format=html"
+    }, function(error, resp, body) {
+        if (!error && resp.statusCode === 200) {
+            var regex = /src\s*=\s*"(.+?)"/;
+            var src = regex.exec(body)[1];
+
+            botPayload.text = src
+
+            console.log(src);
+
+            return res.status(200).json(botPayload);
+        }
+    })
 });
 
 app.post('/fact', function (req, res) {
