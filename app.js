@@ -14,7 +14,7 @@ app.get('/', function (req, res) {
 	//
 });
 
-app.get('/fact', function (req, res) {
+app.post('/fact', function (req, res) {
     var botPayload = {
         text: ""
     };
