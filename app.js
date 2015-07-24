@@ -19,7 +19,7 @@ app.post("/yawn", function(req, res) {
     return res.status(200).json({text: "http://www.catgifs.org/wp-content/uploads/2013/09/122_yawn_cat_gifs.gif"});
 })
 
-app.get('/image', function (req, res) {
+app.post('/image', function (req, res) {
 	var botPayload = {
         text: ""
     }
