@@ -5,7 +5,7 @@ var express = require('express'),
     WeatherBot = require("weatherbot");
 
 var app = express(),
-    port = process.env.PORT || 8080;
+    port = process.env.PORT || 3000;
 
 // body parser middleware
 app.use(bodyParser.urlencoded({
@@ -20,6 +20,7 @@ app.post("/catbot-fact", catbot.fact);
 
 var weatherbot = new WeatherBot();
 app.post("/weatherbot-current", weatherbot.getCurrent);
+//app.post("/weatherbot-forecast", weatherbot.getCurrent);
 
 // error handler
 app.use(function (err, req, res, next) {
