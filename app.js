@@ -1,10 +1,11 @@
 var express = require('express'),
     bodyParser = require('body-parser'),
     request = require("request"),
-    CatBot = require("catbot");
+    CatBot = require("catbot"),
+    WeatherBot = require("weatherbot");
 
 var app = express(),
-    port = process.env.PORT || 3000;
+    port = process.env.PORT || 8080;
 
 // body parser middleware
 app.use(bodyParser.urlencoded({
@@ -16,6 +17,9 @@ var catbot = new CatBot();
 app.post("/catbot-purr", catbot.purr);
 app.post("/catbot-pic", catbot.pic);
 app.post("/catbot-fact", catbot.fact);
+
+var weatherbot = new WeatherBot();
+app.post("/weatherbot-current", weatherbot.getCurrent);
 
 // error handler
 app.use(function (err, req, res, next) {

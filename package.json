@@ -16,8 +16,9 @@
     "url": "https://github.com/Ikradex/slackcatbot/issues"
   },
   "dependencies": {
-    "express": "~4.13.1",
     "body-parser": "~1.13.2",
-    "request": "~2.60.0"
+    "express": "~4.13.1",
+    "request": "~2.60.0",
+    "sprintf-js": "^1.0.3"
   }
 }
