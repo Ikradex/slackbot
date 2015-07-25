@@ -13,9 +13,9 @@ app.use(bodyParser.urlencoded({
 
 // add catbot endpoints
 var catbot = new CatBot();
-app.post("/catbot::purr", catbot.purr);
-app.post("/catbot::pic", catbot.pic);
-app.post("/catbot::fact", catbot.fact);
+app.post("/catbot-purr", catbot.purr);
+app.post("/catbot-pic", catbot.pic);
+app.post("/catbot-fact", catbot.fact);
 
 // error handler
 app.use(function (err, req, res, next) {
