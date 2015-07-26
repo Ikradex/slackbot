@@ -19,8 +19,7 @@ app.post("/catbot-pic", catbot.pic);
 app.post("/catbot-fact", catbot.fact);
 
 var weatherbot = new WeatherBot();
-app.post("/weatherbot-current", weatherbot.getCurrent);
-//app.post("/weatherbot-forecast", weatherbot.getCurrent);
+app.post("/weatherbot", weatherbot.handleRequest);
 
 // error handler
 app.use(function (err, req, res, next) {
