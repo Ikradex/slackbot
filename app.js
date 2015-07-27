@@ -12,11 +12,9 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-// add catbot endpoints
 var catbot = new CatBot();
-app.post("/catbot-purr", catbot.purr);
-app.post("/catbot-pic", catbot.pic);
-app.post("/catbot-fact", catbot.fact);
+app.post("/catbot", catbot.handleRequest.bind(catbot));
+
 
 var weatherbot = new WeatherBot();
 app.post("/weatherbot", weatherbot.handleRequest.bind(weatherbot));
