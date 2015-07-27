@@ -19,7 +19,7 @@ app.post("/catbot-pic", catbot.pic);
 app.post("/catbot-fact", catbot.fact);
 
 var weatherbot = new WeatherBot();
-app.post("/weatherbot", weatherbot.handleRequest);
+app.post("/weatherbot", weatherbot.handleRequest.bind(weatherbot));
 
 // error handler
 app.use(function (err, req, res, next) {
