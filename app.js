@@ -2,6 +2,7 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     request = require("request"),
     CatBot = require("catbot"),
+    PuppyBot = require("puppybot"),
     WeatherBot = require("weatherbot");
 
 var app = express(),
@@ -15,6 +16,8 @@ app.use(bodyParser.urlencoded({
 var catbot = new CatBot();
 app.post("/catbot", catbot.handleRequest.bind(catbot));
 
+var puppybot = new PuppyBot();
+app.post("/puppybot", puppybot.handleRequest.bind(puppybot));
 
 var weatherbot = new WeatherBot();
 app.post("/weatherbot", weatherbot.handleRequest.bind(weatherbot));
