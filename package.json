@@ -20,7 +20,5 @@
     "express": "~4.13.1",
     "request": "~2.60.0",
     "sprintf-js": "^1.0.3",
-    //"cleverbot.io": "~1.0.4",
-    //"uuid": "~2.0.1"
   }
 }
