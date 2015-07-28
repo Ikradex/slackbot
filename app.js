@@ -24,8 +24,8 @@ app.post("/puppybot", puppybot.handleRequest.bind(puppybot));
 var weatherbot = new WeatherBot();
 app.post("/weatherbot", weatherbot.handleRequest.bind(weatherbot));
 
-var ermahgerd = new Ermahgerd();
-app.post("/ermahgerd", ermahgerd.handleRequest.bind(ermahgerd));
+//var ermahgerd = new Ermahgerd();
+//app.post("/ermahgerd", ermahgerd.handleRequest.bind(ermahgerd));
 
 //var cleverbot = new CleverBot();
 //app.post("/cleverbot", cleverbot.handleRequest.bind(cleverbot));
