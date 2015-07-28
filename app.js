@@ -1,11 +1,10 @@
 var express = require('express'),
     bodyParser = require('body-parser'),
-    request = require("request"),
     CatBot = require("catbot"),
     PuppyBot = require("puppybot"),
-    WeatherBot = require("weatherbot"),
-    CleverBot = require("cleverbot"),
-    Ermahgerd = require("ermahgerd");
+    WeatherBot = require("weatherbot");
+    //CleverBot = require("cleverbot"),
+    //Ermahgerd = require("ermahgerd");
 
 var app = express(),
     port = process.env.PORT || 3000;

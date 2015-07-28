@@ -18,10 +18,9 @@
   "dependencies": {
     "body-parser": "~1.13.2",
     "express": "~4.13.1",
-    "markdown-table": "^0.4.0",
     "request": "~2.60.0",
     "sprintf-js": "^1.0.3",
-    "cleverbot.io": "~1.0.4",
-    "uuid": "~2.0.1"
+    //"cleverbot.io": "~1.0.4",
+    //"uuid": "~2.0.1"
   }
 }
