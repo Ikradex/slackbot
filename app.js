@@ -2,9 +2,9 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     CatBot = require("catbot"),
     PuppyBot = require("puppybot"),
-    WeatherBot = require("weatherbot");
+    WeatherBot = require("weatherbot"),
     //CleverBot = require("cleverbot"),
-    //Ermahgerd = require("ermahgerd");
+    Ermahgerd = require("ermahgerd");
 
 var app = express(),
     port = process.env.PORT || 3000;
@@ -23,8 +23,8 @@ app.post("/puppybot", puppybot.handleRequest.bind(puppybot));
 var weatherbot = new WeatherBot();
 app.post("/weatherbot", weatherbot.handleRequest.bind(weatherbot));
 
-//var ermahgerd = new Ermahgerd();
-//app.post("/ermahgerd", ermahgerd.handleRequest.bind(ermahgerd));
+var ermahgerd = new Ermahgerd();
+app.post("/ermahgerd", ermahgerd.handleRequest.bind(ermahgerd));
 
 //var cleverbot = new CleverBot();
 //app.post("/cleverbot", cleverbot.handleRequest.bind(cleverbot));
