@@ -3,7 +3,7 @@ var express = require('express'),
     CatBot = require("catbot"),
     PuppyBot = require("puppybot"),
     WeatherBot = require("weatherbot"),
-    //CleverBot = require("cleverbot"),
+    CleverBot = require("cleverbot"),
     Ermahgerd = require("ermahgerd");
 
 var app = express(),
@@ -26,8 +26,8 @@ app.post("/weatherbot", weatherbot.handleRequest.bind(weatherbot));
 var ermahgerd = new Ermahgerd();
 app.post("/ermahgerd", ermahgerd.handleRequest.bind(ermahgerd));
 
-//var cleverbot = new CleverBot();
-//app.post("/cleverbot", cleverbot.handleRequest.bind(cleverbot));
+var cleverbot = new CleverBot();
+app.post("/cleverbot", cleverbot.handleRequest.bind(cleverbot));
 
 // error handler
 app.use(function (err, req, res, next) {
